@@ -1,0 +1,37 @@
+{
+  "name": "OCR Data Entry System",
+  "description": "A Langflow flow for processing OCR data entry.",
+  "nodes": [
+    {
+      "id": "textInput",
+      "type": "Input",
+      "data": {
+        "text": "Please upload an image for OCR."
+      }
+    },
+    {
+      "id": "ocrProcessor",
+      "type": "PythonFunction",
+      "data": {
+        "code": "from scripts.process_ocr import process_image\ndef run(image_path):\n    result = process_image(image_path)\n    return result"
+      }
+    },
+    {
+      "id": "outputDisplay",
+      "type": "Output",
+      "data": {
+        "text": "{ocrProcessor.result}"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "textInput",
+      "target": "ocrProcessor"
+    },
+    {
+      "source": "ocrProcessor",
+      "target": "outputDisplay"
+    }
+  ]
+}

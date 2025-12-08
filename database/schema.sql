@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS ocr_results (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename TEXT NOT NULL,
+    ocr_text TEXT,
+    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status TEXT NOT NULL
+);

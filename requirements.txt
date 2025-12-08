@@ -1,0 +1,5 @@
+langflow
+pytesseract
+Pillow
+# sqlite3 is built-in, no need to list
+# Add other Python dependencies here as your Langflow flow or scripts evolve
